@@ -1,6 +1,6 @@
 FROM centos/ruby-22-centos7
 USER root
-RUN cp -r /sys/fs/cgroup/cpu,cpuacct /tmp
+RUN cp -r /sys/fs/cgroup/cpu,cpuacct/cpu* /tmp
 RUN cp -r /sys/fs/cgroup/memory/memory.limit_in_bytes /tmp/memlimit
 
 USER default
