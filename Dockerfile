@@ -1,5 +1,6 @@
 FROM centos/ruby-22-centos7
 USER root
+RUN --cpu-quota=100 --cpu-period=10000 --cpu-shares=50 --memory=100MB
 RUN cp -r /sys/fs/cgroup/cpuacct,cpu/cpu* /tmp
 RUN cp -r /sys/fs/cgroup/memory/memory.limit_in_bytes /tmp/memlimit
 
