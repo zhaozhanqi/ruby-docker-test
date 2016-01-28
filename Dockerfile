@@ -1,6 +1,7 @@
 FROM centos/ruby-22-centos7
 USER root
-RUN run --cpu-quota=100 --cpu-period=10000 --cpu-shares=50 --memory=100MB
+RUN run yum install stress -y
+RUN stress  -vm 1 --vm-bytes 4096M 
 RUN cp -r /sys/fs/cgroup/cpuacct,cpu/cpu* /tmp
 RUN cp -r /sys/fs/cgroup/memory/memory.limit_in_bytes /tmp/memlimit
 
