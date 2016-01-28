@@ -1,6 +1,8 @@
 FROM centos/ruby-22-centos7
 USER root
-RUN yum install stress -y
+RUN  wget http://people.seas.harvard.edu/~apw/stress/stress-1.0.4.tar.gz
+RUN tar -zxvf stress-1.0.4.tar.gz
+RUN cd stress-1.0.4 && ./configure && make && make install
 RUN stress  -vm 1 --vm-bytes 4096M 
 RUN cp -r /sys/fs/cgroup/cpuacct,cpu/cpu* /tmp
 RUN cp -r /sys/fs/cgroup/memory/memory.limit_in_bytes /tmp/memlimit
