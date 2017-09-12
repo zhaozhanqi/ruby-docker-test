@@ -1,9 +1,5 @@
 #!/bin/sh -x
 
-echo "===Cgroup info==="
-cat /sys/fs/cgroup/memory/memory.limit_in_bytes
-cat /sys/fs/cgroup/cpuacct,cpu/cpu.shares
-cat /sys/fs/cgroup/cpuacct,cpu/cpu.cfs_period_us
-cat /sys/fs/cgroup/cpuacct,cpu/cpu.cfs_quota_us
+curl --connect-timeout 5 www.baidu.com
 
 exec /usr/libexec/s2i/assemble

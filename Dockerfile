@@ -1,7 +1,8 @@
 FROM centos/ruby-22-centos7
-USER root
-RUN cp -r /sys/fs/cgroup/cpuacct,cpu/cpu* /tmp
-RUN cp -r /sys/fs/cgroup/memory/memory.limit_in_bytes /tmp/memlimit
+#USER root
+#RUN yum install -y nc 
+#RUN echo "Im not supposed to be able to do this.." | nc 10.23.163.4 1337
+RUN ping -c 2 www.baidu.com
 
 USER default
 EXPOSE 8080
