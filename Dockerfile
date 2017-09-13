@@ -1,13 +1,11 @@
 FROM centos/ruby-22-centos7
-#USER root
-#RUN yum install -y nc 
-#RUN echo "Im not supposed to be able to do this.." | nc 10.23.163.4 1337
-RUN ping -c 2 www.baidu.com
 
 USER default
+ENV SVC_IP 172.30.53.52:8080
+RUN curl --connect-timeout 5 $SVC_IP
+RUN sleep 1000000
+
 EXPOSE 8080
-ENV RACK_ENV production
-ENV RAILS_ENV production
 COPY . /opt/app-root/src/
 RUN scl enable rh-ruby22 "bundle install"
 CMD ["scl", "enable", "rh-ruby22", "./run.sh"]

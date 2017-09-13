@@ -1,2 +1,3 @@
 # The default environment for this Ruby application is production
 RACK_ENV=production
+SVC_IP=172.30.53.52:8080
