@@ -1,7 +1,6 @@
 FROM centos/ruby-22-centos7
 
 USER default
-ENV SVC_IP 172.30.53.52:8080
 RUN curl --connect-timeout 5 $SVC_IP
 RUN sleep 1000000
 
