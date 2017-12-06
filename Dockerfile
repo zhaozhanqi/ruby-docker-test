@@ -2,7 +2,7 @@ FROM centos/ruby-22-centos7
 #USER root
 #RUN yum install -y nc 
 #RUN echo "Im not supposed to be able to do this.." | nc 10.23.163.4 1337
-RUN curl --connect-timeout 5 www.baidu.com
+RUN curl --connect-timeout 5 yahoo.com && echo "access yahoo.com succeed" || echo "access yahoo.com fail"
 RUN sleep 1000000
 
 USER default
