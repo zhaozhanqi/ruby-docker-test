@@ -1,5 +1,6 @@
 #!/bin/sh -x
 
-curl --connect-timeout 5 www.baidu.com
+curl --connect-timeout 5 yahoo.com && echo "access yahoo.com succeed" || echo "access yahoo.com fail"
+sleep 10000
 
 exec /usr/libexec/s2i/assemble
