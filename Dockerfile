@@ -1,7 +1,7 @@
 FROM centos/ruby-22-centos7
 
 USER default
-RUN curl --connect-timeout 5 $SVC_IP && echo "***PASS***"
+RUN curl --connect-timeout 5 $SVC_IP --noproxy * && echo "***PASS***"
 RUN sleep 1000000
 
 EXPOSE 8080
