@@ -1,5 +1,5 @@
 #!/bin/sh -x
 
-curl --connect-timeout 5 $SVC_IP --no-proxy *
+curl --connect-timeout 5 $SVC_IP
 
 exec /usr/libexec/s2i/assemble
